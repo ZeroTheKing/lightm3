@@ -377,4 +377,21 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 }
 });
 
+
+client.on('ready',async () => {
+console.log("Starting..");
+let g = client.guilds.get("530471033019301888");
+let c = g.channels.get("530484276131790871");
+if(c.type === 'voice') {
+c.join();
+setInterval(() => {
+if(!g.me.voiceChannel) c.join();
+}, 1);
+} else {
+console.log("Failed To Join:\n The Channel Type isn't \"text\"");
+}
+});
+
+
+
 client.login(process.env.BOT_TOKEN);
