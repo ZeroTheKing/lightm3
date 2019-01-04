@@ -18,9 +18,9 @@ const fs = require('fs');
  
 const client = new Discord.Client({disableEveryone: true});
  
-const prefix = "+";
- var adminprefix = '1'
-
+const prefix = "3";
+ var adminprefix = '3'
+ 
  client.on('message', async msg => {
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
